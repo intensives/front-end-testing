@@ -5,9 +5,10 @@ import glob from "glob";
 // 查找所有以 `.spec.js` 结尾的测试文件
 const testFiles = glob.sync("**/*.spec.js");
 
-// 运行所有测试文件
+// 自动运行所有测试文件
 for (const testFile of testFiles) {
   const fileContent = await fs.readFile(testFile, "utf-8");
+  // 解决的问题是：将core.js和index.js在一个脚本中执行，解决函数内执行import报错
   await runModule(fileContent + "import { run } from './core.js'; run()");
 }
 
@@ -26,6 +27,7 @@ async function runModule(fileContent) {
 
     // 获取转换后的代码
     const transformedCode = result.outputFiles[0].text;
+    console.log({fileContent, transformedCode})
     // 执行代码
     const runCode = new Function(transformedCode);
     runCode();
