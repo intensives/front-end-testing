@@ -1,7 +1,9 @@
 import { it, expect, describe } from "vitest";
 import { User } from "./User";
 import { Product } from "./Product";
-
+// 最小准备数据原则
+// 在准备测试数据的时候,和当前要测试的功能无关的数据不需要提供
+// 保持单元测试的可读性
 describe("User", () => {
   it("should buy a product", () => {
     // 准备测试数据 - 包含无关的信息
