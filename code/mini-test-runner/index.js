@@ -8,7 +8,7 @@ const testFiles = glob.sync("**/*.spec.js");
 // 自动运行所有测试文件
 for (const testFile of testFiles) {
   const fileContent = await fs.readFile(testFile, "utf-8");
-  // 解决的问题是：将core.js和index.js在一个脚本中执行，解决函数内执行import报错
+  // 解决的问题是：将core.js和index.js在一个脚本中执行new Function，解决函数内执行import报错
   await runModule(fileContent + "import { run } from './core.js'; run()");
 }
 
