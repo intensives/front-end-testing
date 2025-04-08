@@ -3,6 +3,7 @@ import { tellName } from "./use-variable";
 import { name, gold } from "./config";
 
 vi.mock("./config", async (importOriginal) => {
+  // 保留原来的属性和方法
   return { ...await importOriginal() as any, name: "xiaohong" };
 });
 
