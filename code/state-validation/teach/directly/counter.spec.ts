@@ -1,6 +1,6 @@
 import { Counter } from "./counter";
 import { beforeEach, it, expect, describe } from "vitest";
-
+// 1. 状态在本身
 describe("Counter", () => {
   it("increment", () => {
     // 0 -> 1

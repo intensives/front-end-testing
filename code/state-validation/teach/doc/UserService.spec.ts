@@ -1,7 +1,7 @@
 import { it, expect, describe } from "vitest";
 import { UserService } from "./UserService";
 import { Database } from "./database";
-
+// 2. 状态在依赖中
 describe("UserService", () => {
   it("should create user ", () => {
     const database = new Database();

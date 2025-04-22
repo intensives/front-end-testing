@@ -22,3 +22,4 @@ describe("UserService", () => {
     expect(addUser).toBeCalledWith({ name: "cxr", id: user.id });
   });
 });
+

@@ -15,8 +15,8 @@ describe("login", () => {
     login("cxr", "jiubugaosuni");
 
     expect(cxrLogin).toBeCalled();
-    // expect(cxrLogin).toBeCalledWith("cxr", "jiubugaosuni");
-    // expect(cxrLogin).toBeCalledTimes(1);
+    expect(cxrLogin).toBeCalledWith("cxr", "jiubugaosuni");
+    expect(cxrLogin).toBeCalledTimes(1);
   });
 
   it("v2", () => {
